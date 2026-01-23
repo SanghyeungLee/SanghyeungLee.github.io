@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="ko">
   <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -12,6 +20,35 @@
     <meta name="description" content="{{ site.description | escape }}" />
     {%- endif -%} {%- if site.author -%}
     <meta name="author" content="{{ site.author | escape }}" />
+    {%- endif -%}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}" />
+    {%- if page.description -%}
+    <meta property="og:description" content="{{ page.description | escape }}" />
+    {%- elsif site.description -%}
+    <meta property="og:description" content="{{ site.description | escape }}" />
+    {%- endif -%}
+    {%- if page.image -%}
+    <meta property="og:image" content="{{ page.image | absolute_url }}" />
+    {%- elsif site.og_image -%}
+    <meta property="og:image" content="{{ site.og_image | absolute_url }}" />
+    {%- endif -%}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}" />
+    {%- if page.description -%}
+    <meta name="twitter:description" content="{{ page.description | escape }}" />
+    {%- elsif site.description -%}
+    <meta name="twitter:description" content="{{ site.description | escape }}" />
+    {%- endif -%}
+    {%- if page.image -%}
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
+    {%- elsif site.og_image -%}
+    <meta name="twitter:image" content="{{ site.og_image | absolute_url }}" />
     {%- endif -%}
 
     <!-- CSS -->
@@ -29,6 +66,10 @@
     {%- endif -%}
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQNS23Z8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <div class="site">
       <div class="title">
         <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
