@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+    </title>
+
+    {%- if site.description -%}
+    <meta name="description" content="{{ site.description | escape }}" />
+    {%- endif -%} {%- if site.author -%}
+    <meta name="author" content="{{ site.author | escape }}" />
+    {%- endif -%}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/css/syntax.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/css/screen.css' | relative_url }}" />
+
+    <!-- RSS (선택) -->
+    {%- if site.feed_path -%}
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="{{ site.title | escape }}"
+      href="{{ site.feed_path | relative_url }}"
+    />
+    {%- endif -%}
+  </head>
+  <body>
+    <div class="site">
+      <div class="title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <a class="extra" href="{{ '/' | relative_url }}">home</a>
+        <a class="extra" href="{{ '/dev/' | relative_url }}">dev</a>
+        <a class="extra" href="{{ '/life/' | relative_url }}">life</a>
+        <a class="extra" href="{{ '/interests/' | relative_url }}">interests</a>
+      </div>
+
+      {{ content }}
+
+      <div class="footer">
+        <div class="contact">
+          <p>
+            {{ site.author | default: site.title }}<br />
+            {%- if site.footer_line1 -%} {{ site.footer_line1 }}<br />
+            {%- endif -%} {%- if site.email -%}
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            {%- endif -%}
+          </p>
+        </div>
+
+        <div class="contact">
+          <p>
+            {%- if site.github_url -%}
+            <a href="{{ site.github_url }}">github</a><br />
+            {%- endif -%} {%- if site.twitter_url -%}
+            <a href="{{ site.twitter_url }}">twitter</a><br />
+            {%- endif -%}
+          </p>
+        </div>
+
+        {%- if site.rss_icon -%}
+        <div class="rss">
+          <a href="{{ site.feed_path | default: '/feed.xml' | relative_url }}">
+            <img
+              src="{{ site.rss_icon | relative_url }}"
+              alt="RSS"
+            />
+            <span>RSS</span>
+          </a>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </body>
+</html>

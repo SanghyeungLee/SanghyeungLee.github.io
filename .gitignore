@@ -1,0 +1,20 @@
+# Jekyll build output
+_site/
+
+# Jekyll cache and metadata
+.jekyll-cache/
+.jekyll-metadata/
+.sass-cache/
+
+# Bundler
+vendor/
+.bundle/
+
+# Dependency lock file (GitHub Pages uses its own build, so lock file not needed)
+Gemfile.lock
+
+# macOS
+.DS_Store
+
+# Log files
+*.log

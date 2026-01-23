@@ -1,0 +1,20 @@
+title: Sanghyeung's Dev Log
+description: A blog about software development, programming, and technology.
+author: Sanghyeung Lee
+email: leesh7306@gmail.com
+
+github_url: https://github.com/SanghyeungLee
+url: "https://sanghyeunglee.github.io"
+
+footer_line1: "Software Engineer"
+
+rss_icon: /images/rss.png
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
