@@ -1,0 +1,25 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Environment-dependent path to Maven home directory
+/mavenHomeManager.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ruby related files
+/vendor/
+.bundle/
+
+# Dependency lock file (GitHub Pages uses its own build, so lock file not needed)
+Gemfile.lock
+
+# macOS
+.DS_Store
+
+# Log files
+*.log
+
+.idea/
